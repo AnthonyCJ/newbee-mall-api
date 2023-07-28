@@ -4,7 +4,7 @@ package ltd.newbee.mall.common;
  * @author AnthonyCJ
  * @version 1.0
  * @description 订单状态:0.支付中 1.支付成功 -1.支付失败
- * @date 2023/07/28 16:45
+ * @date 2023/07/27 16:45
  */
 public enum PayStatusEnum {
 

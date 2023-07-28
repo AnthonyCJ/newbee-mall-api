@@ -18,7 +18,7 @@ public class NewBeeMallException extends RuntimeException {
     /**
      * 丢出一个异常
      *
-     * @param message
+     * @param message 异常信息
      */
     public static void fail(String message) {
         throw new NewBeeMallException(message);
