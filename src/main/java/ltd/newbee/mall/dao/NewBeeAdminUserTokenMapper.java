@@ -5,7 +5,7 @@ import ltd.newbee.mall.entity.AdminUserToken;
 /**
  * @author AnthonyCJ
  * @version 1.0
- * @description TODO
+ * @description 管理员用户Token dao层接口，增删改查
  * @date 2023/07/28 20:54
  */
 public interface NewBeeAdminUserTokenMapper {

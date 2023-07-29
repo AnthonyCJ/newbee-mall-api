@@ -9,7 +9,7 @@ import java.util.List;
 /**
  * @author AnthonyCJ
  * @version 1.0
- * @description TODO
+ * @description 商城用户dao层接口
  * @date 2023/07/28 21:01
  */
 public interface MallUserMapper {

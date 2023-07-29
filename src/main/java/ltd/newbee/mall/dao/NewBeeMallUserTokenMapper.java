@@ -5,7 +5,7 @@ import ltd.newbee.mall.entity.MallUserToken;
 /**
  * @author AnthonyCJ
  * @version 1.0
- * @description
+ * @description 商城用户的登录令牌表dao层接口
  * @date 2023/07/28 21:06
  */
 public interface NewBeeMallUserTokenMapper {
