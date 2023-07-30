@@ -13,10 +13,10 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupp
 import java.util.List;
 
 /**
+ * newbee商城 WebMvc配置类
+ * 该类用于配置WebMvc相关设置，例如资源映射、CORS跨域配置和自定义参数解析器等。
+ *
  * @author AnthonyCJ
- * @version 1.0
- * @description TODO
- * @date 2023/07/28 20:42
  */
 @Configuration
 public class NeeBeeMallWebMvcConfigurer extends WebMvcConfigurationSupport {
@@ -27,7 +27,9 @@ public class NeeBeeMallWebMvcConfigurer extends WebMvcConfigurationSupport {
     private TokenToAdminUserMethodArgumentResolver tokenToAdminUserMethodArgumentResolver;
 
     /**
-     * @param argumentResolvers
+     * 添加自定义参数解析器
+     *
+     * @param argumentResolvers 参数解析器列表
      * @tip @TokenToMallUser @TokenToAdminUser 注解处理方法
      */
     public void addArgumentResolvers(List<HandlerMethodArgumentResolver> argumentResolvers) {
@@ -35,23 +37,31 @@ public class NeeBeeMallWebMvcConfigurer extends WebMvcConfigurationSupport {
         argumentResolvers.add(tokenToAdminUserMethodArgumentResolver);
     }
 
+    /**
+     * 添加静态资源映射
+     *
+     * @param registry 资源处理器注册表
+     */
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
+        // 映射文件上传路径，用于访问上传的文件资源
         registry.addResourceHandler("/upload/**").addResourceLocations("file:" + Constants.FILE_UPLOAD_DIC);
+        // 映射商品图片路径，用于访问商品图片资源
         registry.addResourceHandler("/goods-img/**").addResourceLocations("file:" + Constants.FILE_UPLOAD_DIC);
 
 //        registry.
 //                addResourceHandler("/swagger-ui/**")
 //                .addResourceLocations("classpath:/META-INF/resources/webjars/springfox-swagger-ui/")
 //                .resourceChain(false);
-        /** swagger配置 */
+
+        // 添加Swagger-UI资源映射，用于访问Swagger-UI接口文档页面
         registry.addResourceHandler("/swagger-ui/**").addResourceLocations("classpath:/META-INF/resources/webjars/springfox-swagger-ui/");
         super.addResourceHandlers(registry);
     }
 
     /**
-     * 跨域配置
+     * 配置CORS跨域设置
      *
-     * @param registry
+     * @param registry CORS跨域注册表
      */
     @Override
     public void addCorsMappings(CorsRegistry registry) {
